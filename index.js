@@ -164,7 +164,7 @@ module.exports = function(content) {
 		if(!data[match]) return match;
 		return data[match].reduce(function (pV,cV, index, array) {
  
- 			var hash = cV.hash || "";
+ 			var hash = (cV && cV.hash) ? cV.hash : "";
  			var additional = cV.additional.length != 0 ? " " + cV.additional.join(" ") : "";
  			if (index != array.length -1) {
  				additional += ",";
